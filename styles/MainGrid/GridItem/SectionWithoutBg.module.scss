@@ -1,0 +1,54 @@
+@use "../../mixins/media.scss" as *;
+.main {
+  text-align: center;
+  & > * + * {
+    margin-top: 20px;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    max-width: 15ch;
+  }
+
+  p {
+    font-family: var(--font-main);
+    color: var(--dark-grayish-blue);
+    line-height: 1.7rem;
+    font-size: 1.1rem;
+    max-width: 50ch;
+    margin: inherit auto;
+  }
+}
+.link {
+  position: relative;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 0.4rem;
+    z-index: -1;
+    opacity: 40%;
+    bottom: 0;
+    left: 50%;
+    border-radius: 10px;
+    transform: translateX(-50%);
+    transition: all 0.3s linear;
+  }
+  &:hover::before {
+    opacity: 90%;
+  }
+}
+
+@include md {
+  .main {
+    line-height: initial;
+    text-align: left;
+    p {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use "./mixins/media.scss" as *;
+.main {
+  padding: min(30vw, 200px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  h1 {
+    color: white;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-size: 3rem;
+    text-align: center;
+  }
+  // Arrow
+  & > *:nth-child(2) {
+    animation: animate-arrow 1s infinite alternate linear;
+  }
+  background-image: url("/mobile/image-header.jpg");
+  background-size: 100% auto;
+  background-color: #3ebfff;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  @include md {
+    background-image: url("/desktop/image-header.jpg");
+  }
+}
+
+@keyframes animate-arrow {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20%);
+  }
+}

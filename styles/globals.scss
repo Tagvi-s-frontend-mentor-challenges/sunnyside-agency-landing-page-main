@@ -1,0 +1,52 @@
+@use "./mixins/media.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+ul {
+  list-style: none;
+}
+:root {
+  --graphic-design-text: hsl(167, 40%, 24%);
+  --photography-text: hsl(198, 62%, 26%);
+  --footer: hsl(168, 34%, 41%);
+  --very-dark-desaturated-blue: hsl(212, 27%, 19%);
+  --very-dark-grayish-blue: hsl(213, 9%, 39%);
+  --dark-grayish-blue: hsl(232, 10%, 55%);
+  --grayish-blue: hsl(210, 4%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --font-heading: "Fraunces", serif;
+  --font-main: "Barlow", sans-serif;
+  font-size: 100%;
+  @include lg {
+    font-size: 110%;
+  }
+  @media screen and (max-width: 350px) {
+    font-size: 85%;
+  }
+}
+
+body {
+  min-height: 100vh;
+  color: var(--very-dark-desaturated-blue);
+  font-family: var(--font-main);
+}
+header,
+section,
+footer {
+  padding: 2rem;
+}

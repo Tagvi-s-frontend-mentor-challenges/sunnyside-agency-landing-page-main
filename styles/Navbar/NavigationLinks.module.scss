@@ -1,0 +1,53 @@
+@use "../mixins/media.scss" as *;
+.main {
+  color: white;
+  z-index: 1;
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    button {
+      color: var(--very-dark-desaturated-blue);
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      padding: 0.9rem 1.5rem;
+      border-radius: 30px;
+      transition: all 0.2s linear;
+      @include md {
+        &:hover {
+          color: white;
+          background-color: rgba(255, 255, 255, 0.4);
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .main {
+    color: var(--very-dark-grayish-blue);
+    position: absolute;
+    top: calc(100% + 3rem);
+    right: 0;
+    width: 100%;
+    max-width: 300px;
+    background-color: white;
+    padding: 2.5rem;
+    display: grid;
+    place-items: center;
+
+    ul {
+      flex-direction: column;
+    }
+    &::before {
+      $size: 1.5rem;
+      content: "";
+      position: absolute;
+      top: -$size;
+      right: 0;
+      width: $size;
+      height: $size;
+      background-color: inherit;
+      clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    }
+  }
+}

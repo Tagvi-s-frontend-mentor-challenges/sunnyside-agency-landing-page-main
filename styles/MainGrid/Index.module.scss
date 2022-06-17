@@ -1,0 +1,16 @@
+@use "../mixins/media.scss" as *;
+.main {
+  font-family: var(--font-heading);
+  @include md {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    .div {
+      display: grid;
+      place-items: center;
+      &:first-of-type {
+        grid-row: 1/2;
+      }
+    }
+  }
+}

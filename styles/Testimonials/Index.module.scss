@@ -1,0 +1,29 @@
+@use "../mixins/media.scss" as *;
+.main {
+  text-align: center;
+  .flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  h1,
+  figcaption {
+    font-family: var(--font-heading);
+  }
+  h1 {
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+  }
+  @include lg {
+    padding: 10vw;
+    .flex {
+      margin-top: 100px;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}

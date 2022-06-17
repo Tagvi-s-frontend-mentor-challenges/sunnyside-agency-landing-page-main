@@ -1,0 +1,31 @@
+.main {
+  & > * + * {
+    margin-top: 20px;
+  }
+  figcaption {
+    color: var(--very-dark-desaturated-blue);
+    margin-top: 20px;
+    span {
+      margin-top: 10px;
+      display: inline-block;
+      font-family: var(--font-main);
+      color: var(--grayish-blue);
+      font-size: 0.8rem;
+    }
+  }
+  p {
+    line-height: 2rem;
+    color: var(--very-dark-grayish-blue);
+    max-width: 35ch;
+    margin: 0 auto;
+  }
+}
+.pic {
+  $size: 3.5rem;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}

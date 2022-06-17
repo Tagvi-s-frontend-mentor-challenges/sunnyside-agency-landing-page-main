@@ -1,0 +1,12 @@
+.main {
+  width: 100%;
+  position: absolute;
+  padding: min(5vw, 2rem);
+  .relativePositioning {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
